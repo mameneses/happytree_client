@@ -1,0 +1,120 @@
+<div ng-show="finish" ng-click="hideFinish()" class="finish-screen">
+  <center class="done-gif">
+  <iframe src="//giphy.com/embed/IjmMzurYulKEw?html5=true" width="480" height="318" frameBorder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+  </center>
+  <center class="done-text" >Good Job!</center>
+</div>
+
+<div class="prompt-page" ng-show="promptShowing">
+  <div class="panel panel-success prompt-panel">
+    <div class="panel-heading">
+      <h3 class="center-text">Prompt</h3>
+    </div>
+    <div class="panel-body">
+      <ol>
+        <li>
+          <h5>Prompt student: 
+            <ul>
+              <li>They will be asked to find letters.</li>
+              <li>Once they find the correct letter, they should click on it ONLY ONCE.</li>
+              <li>If they are not sure of the answer, they should guess.</li>
+              <li>When they are done and see fireworks, raise their hand for more assistance.</li>
+            </ul>
+          </h5>
+        </li>
+        <li><h5>Select the student. </h5></li>
+        <li><h5>Click Assesment type to start assement.</h5></li>
+        <h5>At the end of the assesment it will automatically save.</h5>
+      </ol>
+      <div class="center-text">
+        <button ng-click="hidePrompt()" class="btn btn-default ">Okay</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="btn-holder" ng-show="startButton">
+    <div class="row">
+      <center><h1>Letter Assesment</h1></center>
+      <center><button ng-click="showPrompt()" class="btn btn-default ">Read Prompt</button></center>
+      <br>
+    </div>
+    <div ng-show="isAuthenticated()">
+    <div class="row la-select-container">
+      <div class="col-xs-4"><h5>Class:</h5></div>
+      <div class="col-xs-8">
+        <form name="classForm">
+          <fieldset class="form-group">
+            <select ng-model="currentClass" class="letter-assesment-form-control form-control pointer" ng-options="class as  class for class in currentUser.classes | orderBy:'firstName'"  title="Classes" ng-change="setCurrentStudents()">
+              <option value="" disabled selected style='display:none;'> -> Choose Class <- </option>
+            </select>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+    <div class="row la-select-container">
+      <div class="col-xs-4"><h5>Student:</h5></div>
+      <div class="col-xs-8">
+        <form name="studentForm">
+          <fieldset class="form-group">
+            <select ng-model="selectedStudent" class="letter-assesment-form-control form-control pointer" ng-options="student as student.firstName + ' ' + student.lastName for student in currentStudents | orderBy:'firstName'"  title="Students">
+              <option value="" disabled selected style='display:none;'> -> Choose Student <- </option>
+            </select>
+          </fieldset>
+        </form>
+        
+      </div>
+  
+    </div>
+
+
+    </div>
+    <div class="row">
+      <div>
+          <button ng-click="startLetterAssesment(1)" class="col-sm-4 col-xs-12 btn btn-success letter-assesment-tile">
+          <h1>A</h1>
+          <h6>Capital Letters</h6>
+          </button>
+      </div>
+       <div>
+        <button ng-click="startLetterAssesment(2)" class="col-sm-4 col-xs-12 btn btn-success letter-assesment-tile">
+          <h1 class="letter-assesment-lower">a</h1>
+          <h6>Lowercase Letters</h6>
+          </button>
+      </div>
+      <div>
+        <button ng-click="startLetterAssesment(3)" class="col-sm-4 col-xs-12 btn btn-success letter-assesment-tile">
+          <img class="sound-icon-tile" src="img/sound_icon.png">
+          <h6>Letter Sounds</h6>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="letter-assesment-showing">
+    <div class="row " ng-show="upper || lower">
+      <div class="col-sm-3 col-sm-offset-9">
+        <h6 ng-show="isAuthenticated()">Assesment for {{selectedStudent.firstName}} {{selectedStudent.lastName}}</h6>
+        <!-- <div class="btn btn-success" ng-show="upper" ng-click="switchCase()">Switch to Lower Case</div>
+        <div class="btn btn-success" ng-show="lower" ng-click="switchCase()">Switch to Upper Case</div> -->
+      </div>
+    </div>
+    <div class="row" ng-hide="startButton">
+
+    <div><center><img class="sound-icon pointer"ng-click="playCorrectAudio()" src="img/sound_icon.png"></center></div>
+
+    <div>
+      <center>
+        <div class="letters-board" ng-show="upper" ng-repeat="letter in letterBoard">
+          <div class="col-sm-4  col-xs-6 img-thumbnail pointer" ng-click="letterGuess(letter)">
+            <h1 class="comic-sans"><center>{{letter.upper}}</center></h1>
+          </div>
+        </div>
+        <div class="letters-board" ng-show="lower" ng-repeat="letter in letterBoard">
+          <div class="col-sm-4 img-thumbnail pointer" ng-click="letterGuess(letter)">
+            <h1 class="comic-sans"><center>{{letter.lower}}</center></h1>
+          </div>
+        </div>
+      </center>
+    </div>
+  </div>
+
