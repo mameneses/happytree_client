@@ -416,6 +416,7 @@ angular.module('HappyTree')
     $scope.deleteStudent = function (student) {
       var confirmDelete = confirm("Are you sure you want to DELETE " + student.firstName + " " + student.lastName + "?")
       if (confirmDelete == true) {
+        $rootScope.loading = true
         StudentService.deleteStudent(student)
         $scope.currentStudent = {}
         $scope.editStudentShowing = false
@@ -429,6 +430,7 @@ angular.module('HappyTree')
       $scope.setStudents()
       $scope.setCurrentStudents()
       $scope.getClassStats()
+      $rootScope.loading = false
     });
 
     $scope.getScoreColorClass = function(percentCorrect) {

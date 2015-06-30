@@ -1,19 +1,38 @@
-<div class="row">
-  <div>
-    
-  </div>
-  <div class="row">
-    <div class="col-xs-3">
-      <div> </div>
+<div class="container">
+  <div class="math-q-container">
+    <div class="color-container">
+        <div class="red-bg color-tile" ng-click="colorSelect('red')"></div> 
+        <div class="green-bg color-tile" ng-click="colorSelect('green')"></div>
+        <div class="blue-bg color-tile" ng-click="colorSelect('blue')"></div>
+        <div class="yellow-bg color-tile" ng-click="colorSelect('yellow')"></div> 
     </div>
-    <div class="col-xs-3">
-      <div> </div>
-    </div>
-    <div class="col-xs-3">
-      <div> </div>
-    </div>
-    <div class="col-xs-3">
-      <div> </div>
+    <div class="math-shape-container">
+      <div class="row" ng-show="sectionNumber == '1'">
+        <div class="col-xs-3">
+          <center><div id="rectangle1" class="rectangle" ng-click="paintShape('rectangle')"> </div></center>
+          
+        </div>
+        <div class="col-xs-3">
+          <center><div id="triangle-eq1" class="triangle-eq" ng-click="paintShape('triangle-eq')"> </div></center>
+        </div>
+        <div class="col-xs-3">
+          <center><div id="square1" class="square" ng-click="paintShape('square')"> </div></center>
+        </div>
+        <div class="col-xs-3">
+          <center><div id="circle1" class="circle" ng-click="paintShape('circle')"> </div></center>
+        </div>
+      </div>
+      <div ng-show="sectionNumber == '2'">
+        <center>
+          <div id="triangle-eq2" class="triangle-eq" ng-click="paintShape('triangle-eq')"></div>
+        </center>
+        <center>
+          <div id="square2" class="square" ng-click="paintShape('square')"></div>
+        </center>
+        <center>
+          <div id="triangle-rt2" class="triangle-rt" ng-click="paintShape('triangle-rt')"></div>
+        </center>
+      </div>
     </div>
   </div>
 </div>

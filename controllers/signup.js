@@ -23,6 +23,7 @@ angular.module('HappyTree')
         })
         .catch(function(response) {
           if (response.data == null) {
+            $rootScope.loading = false
             alert("We are having issues with our servers. Please try again soon. Thank you for your patience.")
           }
         });

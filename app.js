@@ -25,9 +25,13 @@ angular.module('HappyTree', ['ngRoute', 'satellizer', 'chart.js', 'ui.calendar',
         templateUrl: 'views/sight_words.html',
         controller: 'SightWordsCtrl'
       })
-      .when('/letters_assesment', {
+      .when('/letters_assessment', {
         templateUrl: 'views/letters_assesment.html',
         controller: 'LettersAssesmentCtrl'
+      })
+      .when('/math_assessment', {
+        templateUrl: 'views/math_assesment.html',
+        controller: 'MathAssesmentCtrl'
       })
       .when('/students', {
         templateUrl: 'views/students.html',

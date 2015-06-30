@@ -23,8 +23,8 @@
           </h5>
         </li>
         <li><h5>Select the student. </h5></li>
-        <li><h5>Click Assesment type to start assement.</h5></li>
-        <h5>At the end of the assesment it will automatically save.</h5>
+        <li><h5>Click Assessment type to start assement.</h5></li>
+        <h5>At the end of the assessment it will automatically save.</h5>
       </ol>
       <div class="center-text">
         <button ng-click="hidePrompt()" class="btn btn-default ">Okay</button>
@@ -35,7 +35,7 @@
 
   <div class="btn-holder" ng-show="startButton">
     <div class="row">
-      <center><h1>Letter Assesment</h1></center>
+      <center><h1>Letter Assessment</h1></center>
       <center><button ng-click="showPrompt()" class="btn btn-default ">Read Prompt</button></center>
       <br>
     </div>
@@ -93,7 +93,7 @@
   <div class="letter-assesment-showing">
     <div class="row " ng-show="upper || lower">
       <div class="col-sm-3 col-sm-offset-9">
-        <h6 ng-show="isAuthenticated()">Assesment for {{selectedStudent.firstName}} {{selectedStudent.lastName}}</h6>
+        <h6 ng-show="isAuthenticated()">Assessment for {{selectedStudent.firstName}} {{selectedStudent.lastName}}</h6>
         <!-- <div class="btn btn-success" ng-show="upper" ng-click="switchCase()">Switch to Lower Case</div>
         <div class="btn btn-success" ng-show="lower" ng-click="switchCase()">Switch to Upper Case</div> -->
       </div>

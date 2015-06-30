@@ -413,12 +413,12 @@ a:hover {
 }
 
 .circleDiv {
-    border-radius: 50%;   
-    width: 300px;
-    height: 300px;
-    background: white;
-    border: 3px solid green;
-    margin: 0 auto;
+  border-radius: 50%;   
+  width: 300px;
+  height: 300px;
+  background: white;
+  border: 3px solid green;
+  margin: 0 auto;
 }
 
 .home-tile {
@@ -677,7 +677,7 @@ a:hover {
   width:300px;
   margin: 0 auto;
   display: block;
-  padding-left: 10px;
+  padding-left: 4px;
 }
 
 .student-panel {
@@ -740,14 +740,17 @@ a:hover {
 }
 
 @media (max-width: 775px) {
-    .overlay1 {
-      z-index: 1;
-      padding-top:100px;
-      width: 100%;
-      height: 1550px;
-      background: rgba(0, 0, 0, 0.7);
-    }
+  .overlay1 {
+    z-index: 1;
+    padding-top:100px;
+    width: 100%;
+    height: 1700px;
+    background: rgba(0, 0, 0, 0.7);
   }
+  .home-tutorial {
+  height: 1700px;
+}
+}
 
 .feature-body {
 }
@@ -792,4 +795,149 @@ a:hover {
   width: 300px;
   margin: 0 auto;
   display: block;
+}
+
+
+/*MATH ASSESMENTS*/
+
+.square {
+  width: 100px;
+  height: 100px;
+  background: #C0C0C0;
+  margin-top: 50px;
+}
+
+.rectangle {
+  width: 100px;
+  height: 200px;
+  background: #C0C0C0;
+}
+
+.circle {
+  width: 100px;
+  height: 100px;
+  background: #C0C0C0;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+  margin-top: 50px;
+}
+
+.oval {
+  width: 150px;
+  height: 100px;
+  background: #C0C0C0;
+  -moz-border-radius: 100px / 50px;
+  -webkit-border-radius: 100px / 50px;
+  border-radius: 100px / 50px;
+  margin-top: 50px;
+}
+
+.triangle-eq {
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 100px solid #C0C0C0;
+  margin-top: 50px;
+}
+
+.triangle-rt {
+  width: 0;
+  height: 0;
+  border-bottom: 100px solid #C0C0C0;
+  border-right: 100px solid transparent;
+  margin-top: 50px;
+}
+
+.diamond {
+  width: 0;
+  height: 0;
+  border: 50px solid transparent;
+  border-bottom: 70px solid #C0C0C0;
+  position: relative;
+  top: -50px;
+  margin-top: 50px;
+}
+
+.diamond:after {
+  content: '';
+  position: absolute;
+  left: -50px; top: 70px;
+  width: 0;
+  height: 0;
+  border: 50px solid transparent;
+  border-top: 70px solid #C0C0C0;
+}
+
+.hexagon {
+  width: 100px;
+  height: 55px;
+  background: #C0C0C0;
+  position: relative;
+}
+.hexagon:before {
+  content: "";
+  position: absolute;
+  top: -25px;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 25px solid #C0C0C0;
+}
+.hexagon:after {
+  content: "";
+  position: absolute;
+  bottom: -25px;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-top: 25px solid #C0C0C0;
+}
+
+.color-tile {
+  border-radius: 20px;
+  height: 70px;
+  width: 70px;
+  margin: 5px;
+  display: inline-block;
+}
+
+.red-bg {
+  background:red;
+}
+
+.blue-bg {
+  background: blue;
+}
+
+.green-bg {
+  background: green;
+}
+
+.yellow-bg {
+  background: yellow;
+}
+
+.math-q-container {
+  background: white;
+  padding: 25px;
+}
+
+.math-q-container:hover {
+  cursor: url("../img/brush_none.png"), auto;
+}
+
+.color-container {
+  margin: 0 auto;
+  width: 330px;
+}
+
+.math-shape-container {
+  width:80%;
+  margin: 0 auto;
 }
