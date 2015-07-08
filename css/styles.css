@@ -9,7 +9,6 @@ a {
 a:hover {
   color: rgba(0,100,0,1);
 }
-
 .loading-gif {
   position: fixed;
   left: 50%;
@@ -94,7 +93,6 @@ a:hover {
   line-height: 46px;
   color: #555;
 }
-
 .form-control:focus {
   box-shadow: inset 0 -1 0 green;
 }
@@ -143,7 +141,6 @@ a:hover {
   width:106%;
   height:340px;
 }
-
 .word {
   position:absolute;
   top: 45%;
@@ -152,11 +149,9 @@ a:hover {
   width:100%;
   font-size: 80px;
 }
-
 .letter {
   font-size: 68px;
 }
-
 .incorrect {
   position:fixed;
   z-index: 1;
@@ -165,7 +160,6 @@ a:hover {
   min-width:100%;
   background-color:rgba(100,0,0,0.70);
 }
-
 .correct {
   position:fixed;
   z-index: 1;
@@ -174,14 +168,12 @@ a:hover {
   min-width:100%;
   background-color:rgba(0,100,0,0.70);
 }
-
 .alphabet {
   float:right;
   clear: both;
   margin-right: 10px;
   margin-bottom: 10px;
 }
-
 .stats-page {
   position:fixed;
   z-index: 1;
@@ -200,46 +192,39 @@ a:hover {
   width:50%;
   margin:0 auto;
 }
-
 .stats-icon {
   height: 40px;
   float: right;
   clear: both;
   margin-right: 10px;
 }
-
 .stats-title {
   font-size: 120px;
   width:50%;  
   margin: 0 auto;
 }
-
 .stats-correct {
   color: green;
   font-size: 40px;
   width:50%;
   margin: 0 auto;
 }
-
 .stats-incorrect{
   color: red;
   font-size: 40px;
   width:50%;
   margin: 0 auto;
 }
-
 .stats-missed-title{
   font-size: 60px;
   width:50%;
   margin: 0 auto;
 }
-
 .stats-missed-results{
   font-size: 30px;
   width:50%;
   margin: 0 auto;
 }
-
 .response {
   position:absolute;
   top:45%;
@@ -254,38 +239,30 @@ a:hover {
   font-size:100px;
   left:15%;
 }
-
 .sight-word-plus {
   color: green;
   position:absolute;
   right: 15px;
   top: -10px;
 }
-
 .pointer:hover {
   cursor:pointer;
 }
-
 .no-pointer:hover {
   cursor:none;
 }
- 
 .tile:hover {
   cursor: pointer;
 }
-
 .stats-icon:hover{
   cursor: pointer;
 }
-
 .large {
   font-size: 30px;
 }
-
 .incorrect:hover{
   cursor: pointer;
 }
-
 .correct:hover{
   cursor: pointer;
 }
@@ -296,10 +273,36 @@ a:hover {
   width:60%;
 }
 
+.letter-select {
+  width: 7.45%;
+  height:50px;
+  margin:1px;
+  background: white;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.letter-unselected {
+  background: #e2e2e2;
+}
+
+.letter-select-container{
+  display: none;
+  margin: 0 auto;
+  margin-bottom: 15px;
+}
+
+.letter-select-btn {
+  margin-top: 36.5px;
+}
+
+.letter-start-btn-container {
+  margin-top:10px;
+  margin-bottom: 50px;
+}
 .comic-sans {
   font-family: "Comic Sans MS", sans-serif;
 }
-
 .finish-screen {
   position:fixed;
   z-index: 1;
@@ -308,110 +311,86 @@ a:hover {
   min-width:100%;
   background-color:rgba(0,0,0,0.85);
 }
-
 .btn-holder {
   width:70%;
   margin: 0 auto;
 }
-
 .done-text {
   font-size:150px;
   color: white;
 }
-
-
 .done-gif {
   margin-top: 50px;
 }
-
 .student-list {
   margin:0 auto;
   width: 300px;
 }
-
 .panel {
   margin-top:45px;
   margin-bottom: 50px;
 }
-
 .animal-alphabet-container {
   width:80%;
 }
-
 .sound-icon-tile {
   height:50px;
   margin-bottom: 10px;
   margin-top:30px;
 }
-
 .letter-assesment-tile {
   height:175px;
 }
-
 .letter-assesment-lower {
   text-transform: lowercase;
 }
-
 .letter-assesment-form-control {
   width:200px;
 }
-
 .student-icons {
   margin-left: 8px;
   font-size:20px;
 }
-
 .red {
   color:red;
 }
-
 .edit-color {
   color:#2196f3;
 }
-
 .green {
   color:rgba(0,100,0,1);
 }
-
 .lt-green {
   color:#4caf50;
 }
-
 .yellow {
   color: #999900;
 }
-
 .white {
   color: white;
 }
-
 .stats-panel {
   width:90%;
   padding:15px;
   background-color: white;
   margin-top:44px;
 }
-
 .center-text {
   text-align: center;
 }
-
 .warning-panel {
   width:500px;
   margin: 0 auto;
   margin-top:150px;
 }
-
 .prompt-panel {
   width:600px;
   margin: 0 auto;
   margin-top:50px;
 }
-
 .warning-btns {
   margin: 0 auto;
 }
-
 .circleDiv {
   border-radius: 50%;   
   width: 300px;
@@ -420,18 +399,15 @@ a:hover {
   border: 3px solid green;
   margin: 0 auto;
 }
-
 .home-tile {
   height: 300px; 
 }
-
 .home-title {
   margin-top:170px;
   padding-top:80px;
   font-style:none;
   color:white;
 }
-
 .home-titles {
   color: white; 
   width:100%;
@@ -439,11 +415,9 @@ a:hover {
   padding-top:20px;
   padding-bottom: 20px
 }
-
 .home-start-panel {
   background-color: rgba(0,125,0, 0.2); 
 }
-
 .home-selected-event {
   position: absolute;
   width:230px;
@@ -453,7 +427,6 @@ a:hover {
   border: 2px solid rgba(0,100,0,1);
   background-color: white;
 }
-
 .event-arrow {
   position:absolute;
   width: 0;
@@ -462,11 +435,9 @@ a:hover {
   border-top: 25px solid rgba(0,100,0,1);
   border-right: 25px solid transparent;
 }
-
 .grey {
   color:#c0c0c0;
 }
-
 .home-recent-assesments {
   height: 50px;
   overflow: scroll;
@@ -477,7 +448,6 @@ a:hover {
   margin:auto;
   display: block;
 }
-
 .home-feature-img{
   width:280px;
   height: 280px;
@@ -490,42 +460,36 @@ a:hover {
   height: 800px;
   margin-top: -170px;
 }
-
 .home-open-in {
   background-image: url("../img/home_tree.jpg"); 
   background-size: 100%;
   height: 880px;
   margin-top: -50px;
 }
-
 .home-tutorial {
   height: 765px;
 }
-
 @media (max-width: 1108px) {
-    .home-open {
-        background-size: 1108px; /* Force the image to its minimum width */
-    }
+  .home-open {
+      background-size: 1108px; /* Force the image to its minimum width */
+  }
 
 
-    .home-tutorial {
-        background-size: 1108px; /* Force the image to its minimum width */
-    }
+  .home-tutorial {
+      background-size: 1108px; /* Force the image to its minimum width */
+  }
 }
-
 @media (max-width: 1350px) {
-    .home-open-in {
-      background-size:1350px;
-    }
+  .home-open-in {
+    background-size:1350px;
+  }
 }
-
 .overlay {
     z-index: 1;
     width: 100%;
     height: 800px;
     background: rgba(0, 0, 0, 0.5);
 }
-
 .overlay1 {
     z-index: 1;
     padding-top:100px;
@@ -533,7 +497,6 @@ a:hover {
     height: 765px;
     background: rgba(0, 0, 0, 0.7);
 }
-
 .overlay2 {
     z-index: 1;
     padding-top:100px;
@@ -541,11 +504,9 @@ a:hover {
     height: 880px;
     background: rgba(0, 0, 0, 0.6);
 }
-
 .home-features-btn {
   margin-top: 300px;
 }
-
 .how-btn {
   color:white;
   border:1px solid white;
@@ -558,7 +519,6 @@ a:hover {
   margin: 0 auto;
   display: block;
 }
-
 .how-container {
   padding-top: 10px;
   padding-bottom: 10px;
@@ -566,38 +526,30 @@ a:hover {
   border-radius:5px;
   display:none;
 }
-
 .how-to{
   padding-top: 100px;
   padding-bottom: 10px;
 }
-
 .centered-pills { text-align:center; }
 .centered-pills ul.nav-pills { display:inline-block; }
 .centered-pills li { display:inline; }
 .centered-pills a { float:left; }
-
 .sight-word-lists {
   font-size: 20px;
 }
-
 .delete-list-icon {
   margin-left: 12px;
 }
-
 .delete-word-icon {
   margin-left: 12px;
   font-size: 15px;
 }
-
 .sightword-edit-word {
   font-size: 15px;
 }
-
 .no-caps {
   text-transform: none;
 }
-
 .prompt-page {
   position:fixed;
   z-index: 1;
@@ -607,19 +559,16 @@ a:hover {
   min-width:100%;
   background-color:rgba(0,0,0,0.80);
 }
-
 .missed-letters{
   padding:0.5em;
   background-color: rgba(0,0,0, 0.05);
   height: 60px;
 }
-
 .missed-letters-close{
   position: relative;
   left: 95%;
   top: -55px;
 }
-
 .table-fixed thead {
   width: 97%;
 }
@@ -635,108 +584,94 @@ a:hover {
   float: left;
   border-bottom-width: 0;
 }
-
 .class-table{
   min-height: 260px;
   width: 100%;
 }
-
 .add-student-panel {
   margin-top: 8px;
   margin-bottom: 0px;
 }
-
 .mng-class-panel {
   margin-top: 44px;
   margin-bottom: 0px;
 }
-
 .edit-student-panel {
   margin-top: 36px;
 }
-
 .tool-img {
   width:130px;
   height:130px;
 }
-
 .tool-tile {
   height:260px;
   width:100%;
 }
-
 .student-edit-btn {
   margin-left: 10px;
 }
-
 .student-class-btn {
   margin: 0px;
 }
-
 .all-class-btn {
   width:300px;
   margin: 0 auto;
+  margin-top: 14px;
   display: block;
   padding-left: 4px;
 }
-
 .student-panel {
   margin-top: 8px;
 }
-
 .tbl-crrt {
   max-height:30px;
 }
-
 .std-choose-class {
   width: 80%;
   margin-left: 10%;
 }
-
 .nav-company-title {
   font-size: 20px;
 }
-
 .tracker-close-event {
   float:right;
 }
-
 @media (max-width: 700px) {
-    .navbar-header {
-        float: none;
-    }
-    .navbar-toggle {
-        display: block;
-    }
-    .navbar-collapse {
-        border-top: 1px solid transparent;
-        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
-    }
-    .navbar-collapse.collapse {
-        display: none!important;
-    }
-    .navbar-nav {
-        float: none!important;
-        margin: 7.5px -15px;
-    }
-    .navbar-nav>li {
-        float: none;
-    }
-    .navbar-nav>li>a {
-      border-top: 1px solid black;
-      text-align: center;
-    }
-    .navbar-text {
-        float: none;
-        margin: 15px 0;
-    }
-    /* since 3.1.0 */
-    .navbar-collapse.collapse.in { 
-        display: block!important;
-    }
-    .collapsing {
-        overflow: hidden!important;
-    }
+  .navbar-header {
+      float: none;
+  }
+  .navbar-toggle {
+      display: block;
+  }
+  .navbar-collapse {
+      border-top: 1px solid transparent;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+  }
+  .navbar-collapse.collapse {
+      display: none!important;
+  }
+  .navbar-nav {
+      float: none!important;
+      margin: 7.5px -15px;
+  }
+  .navbar-nav>li {
+      float: none;
+  }
+  .navbar-nav>li>a {
+    border-top: 1px solid black;
+    text-align: center;
+  }
+  .navbar-text {
+      float: none;
+      margin: 15px 0;
+  }
+  /* since 3.1.0 */
+  .navbar-collapse.collapse.in { 
+      display: block!important;
+  }
+  .collapsing {
+      overflow: hidden!important;
+  }
 }
 
 @media (max-width: 775px) {
@@ -751,23 +686,18 @@ a:hover {
   height: 1700px;
 }
 }
-
 .feature-body {
 }
-
 .home-feature-body {
   margin-bottom: 40px;
   color: #d8d8d8;
 }
-
 .add-btn {
   margin-top:11.5px;
 }
-
 .onboard-container {
   margin-top: 70px;
 }
-
 .onboard-tool-img {
   width: 100%;
   max-width: 300px;
@@ -775,7 +705,6 @@ a:hover {
   display: block;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .26);
 } 
-
 .onboard-steps {
     width: 50px;
     height: 50px;
@@ -786,17 +715,14 @@ a:hover {
     display: block;
     text-align: center;
 }
-
 #step-1{
   background: #4caf50;
 }
-
 .la-select-container {
   width: 300px;
   margin: 0 auto;
   display: block;
 }
-
 
 /*MATH ASSESMENTS*/
 
@@ -806,13 +732,11 @@ a:hover {
   background: #C0C0C0;
   margin-top: 50px;
 }
-
 .rectangle {
   width: 100px;
-  height: 200px;
+  height: 150px;
   background: #C0C0C0;
 }
-
 .circle {
   width: 100px;
   height: 100px;
@@ -822,7 +746,6 @@ a:hover {
   border-radius: 50px;
   margin-top: 50px;
 }
-
 .oval {
   width: 150px;
   height: 100px;
@@ -832,7 +755,6 @@ a:hover {
   border-radius: 100px / 50px;
   margin-top: 50px;
 }
-
 .triangle-eq {
   width: 0;
   height: 0;
@@ -841,7 +763,6 @@ a:hover {
   border-bottom: 100px solid #C0C0C0;
   margin-top: 50px;
 }
-
 .triangle-rt {
   width: 0;
   height: 0;
@@ -849,27 +770,24 @@ a:hover {
   border-right: 100px solid transparent;
   margin-top: 50px;
 }
-
 .diamond {
-  width: 0;
-  height: 0;
-  border: 50px solid transparent;
-  border-bottom: 70px solid #C0C0C0;
-  position: relative;
-  top: -50px;
-  margin-top: 50px;
+    width: 110px;
+    height: 110px;
+    background: #C0C0C0;
+/* Rotate */
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+/* Rotate Origin */
+    -webkit-transform-origin: 0 100%;
+    -moz-transform-origin: 0 100%;
+    -ms-transform-origin: 0 100%;
+    -o-transform-origin: 0 100%;
+    transform-origin: 0 100%;
+    margin: 50px;
 }
-
-.diamond:after {
-  content: '';
-  position: absolute;
-  left: -50px; top: 70px;
-  width: 0;
-  height: 0;
-  border: 50px solid transparent;
-  border-top: 70px solid #C0C0C0;
-}
-
 .hexagon {
   width: 100px;
   height: 55px;
@@ -898,7 +816,10 @@ a:hover {
   border-right: 50px solid transparent;
   border-top: 25px solid #C0C0C0;
 }
-
+.hex-div {
+  margin-top:75px;
+  margin-bottom:75px;
+}
 .color-tile {
   border-radius: 20px;
   height: 70px;
@@ -906,38 +827,43 @@ a:hover {
   margin: 5px;
   display: inline-block;
 }
-
 .red-bg {
   background:red;
 }
-
 .blue-bg {
   background: blue;
 }
-
 .green-bg {
   background: green;
 }
-
 .yellow-bg {
   background: yellow;
 }
-
 .math-q-container {
   background: white;
   padding: 25px;
 }
-
 .math-q-container:hover {
   cursor: url("../img/brush_none.png"), auto;
 }
-
+.math-q5-container {
+  background: white;
+  padding: 25px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.math-q5-num {
+  margin-top:75px;
+}
+.math-q5-num:hover {
+  cursor: -webkit-grab; cursor:-moz-grab;
+}
 .color-container {
   margin: 0 auto;
   width: 330px;
 }
-
 .math-shape-container {
   width:80%;
   margin: 0 auto;
 }
+

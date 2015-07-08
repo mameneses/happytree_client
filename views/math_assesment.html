@@ -1,4 +1,71 @@
-<div class="container">
+<div class="prompt-page" ng-show="promptShowing">
+  <div class="panel panel-success prompt-panel">
+    <div class="panel-heading">
+      <h3 class="center-text">Prompt</h3>
+    </div>
+    <div class="panel-body">
+      <ol>
+        <li>
+          <h5>Prompt student: 
+            <ul>
+              <li>They will be asked to find letters.</li>
+              <li>Once they find the correct letter, they should click on it ONLY ONCE.</li>
+              <li>If they are not sure of the answer, they should guess.</li>
+              <li>When they are done and see fireworks, raise their hand for more assistance.</li>
+            </ul>
+          </h5>
+        </li>
+        <li><h5>Select the student. </h5></li>
+        <li><h5>Click Assessment type to start assement.</h5></li>
+        <h5>At the end of the assessment it will automatically save.</h5>
+      </ol>
+      <div class="center-text">
+        <button ng-click="hidePrompt()" class="btn btn-default ">Okay</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div ng-show="startShowing">
+  <center><h1>Math Assessment</h1></center>
+  <center><button ng-click="showPrompt()" class="btn btn-default ">Read Prompt</button></center>
+  <br>
+  <div ng-show="isAuthenticated()">
+    <div class="row la-select-container">
+      <div class="col-xs-4"><h5>Class:</h5></div>
+      <div class="col-xs-8">
+        <form name="classForm">
+          <fieldset class="form-group">
+            <select ng-model="currentClass" class="letter-assesment-form-control form-control pointer" ng-options="class as  class for class in currentUser.classes | orderBy:'firstName'"  title="Classes" ng-change="setCurrentStudents()">
+              <option value="" disabled selected style='display:none;'> -> Choose Class <- </option>
+            </select>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+    <div class="row la-select-container">
+      <div class="col-xs-4"><h5>Student:</h5></div>
+      <div class="col-xs-8">
+        <form name="studentForm">
+          <fieldset class="form-group">
+            <select ng-model="selectedStudent" class="letter-assesment-form-control form-control pointer" ng-options="student as student.firstName + ' ' + student.lastName for student in currentStudents | orderBy:'firstName'"  title="Students">
+              <option value="" disabled selected style='display:none;'> -> Choose Student <- </option>
+            </select>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="center-text" >
+    <div class="btn btn-success" ng-click="start()" >
+      <h5 class="white" >Start</h5>
+    </div>
+  </div>
+</div>
+
+
+<div class="container" ng-if="startShowing == false && sectionNumber != '5'">
   <div class="math-q-container">
     <div class="color-container">
         <div class="red-bg color-tile" ng-click="colorSelect('red')"></div> 
@@ -7,21 +74,30 @@
         <div class="yellow-bg color-tile" ng-click="colorSelect('yellow')"></div> 
     </div>
     <div class="math-shape-container">
+
       <div class="row" ng-show="sectionNumber == '1'">
         <div class="col-xs-3">
-          <center><div id="rectangle1" class="rectangle" ng-click="paintShape('rectangle')"> </div></center>
-          
+          <center>
+            <div id="rectangle1" class="rectangle" ng-click="paintShape('rectangle')"> </div>
+          </center>
         </div>
         <div class="col-xs-3">
-          <center><div id="triangle-eq1" class="triangle-eq" ng-click="paintShape('triangle-eq')"> </div></center>
+          <center>
+            <div id="triangle-eq1" class="triangle-eq" ng-click="paintShape('triangle-eq')"> </div>
+          </center>
         </div>
         <div class="col-xs-3">
-          <center><div id="square1" class="square" ng-click="paintShape('square')"> </div></center>
+          <center>
+            <div id="square1" class="square" ng-click="paintShape('square')"> </div>
+          </center>
         </div>
         <div class="col-xs-3">
-          <center><div id="circle1" class="circle" ng-click="paintShape('circle')"> </div></center>
+          <center>
+            <div id="circle1" class="circle" ng-click="paintShape('circle')"> </div>
+          </center>
         </div>
       </div>
+
       <div ng-show="sectionNumber == '2'">
         <center>
           <div id="triangle-eq2" class="triangle-eq" ng-click="paintShape('triangle-eq')"></div>
@@ -33,6 +109,103 @@
           <div id="triangle-rt2" class="triangle-rt" ng-click="paintShape('triangle-rt')"></div>
         </center>
       </div>
+
+      <div class="row" ng-show="sectionNumber == '3'">
+        <div class="col-xs-6">
+          <center>
+            <div id="triangle-eq3" class="triangle-eq" ng-click="paintShape('triangle-eq')"></div>
+          </center>
+        </div>
+        <div class="col-xs-6">
+          <center>
+            <div id="square3" class="square" ng-click="paintShape('square')"></div>
+          </center>
+        </div>
+      </div>
+
+      <div ng-show="sectionNumber == '4'">
+        <div class="row" >
+          <div class="col-xs-4">
+            <center><div id="triangle-rt4" class="triangle-rt" ng-click="paintShape('triangle-rt')"> </div></center>
+          </div>
+          <div class="col-xs-4">
+            <center><div id="rectangle4" class="rectangle" ng-click="paintShape('rectangle')"> </div></center>
+          </div>
+          <div class="col-xs-4">
+            <center><div id="diamond4" class="diamond" ng-click="paintShape('diamond')"> </div></center>
+          </div>
+          <div class="col-xs-4">
+            <center><div id="circle4" class="circle" ng-click="paintShape('circle')"> </div></center>
+          </div>
+          <div class="col-xs-4">
+            <center><div id="triangle-eq4" class="triangle-eq" ng-click="paintShape('triangle-eq')"> </div></center>
+          </div>
+          <div class="col-xs-4">
+            <center><div id="square4" class="square" ng-click="paintShape('square')"> </div></center>
+          </div>
+        </div>
+        <div ng-show="sectionNumber == '6'">
+        <div class="row" >
+          <div class="col-xs-4">
+            <center><div id="triangle-rt4" class="triangle-rt" ng-click="paintShape('triangle-rt')"> </div></center>
+          </div>
+          <div class="col-xs-4">
+            <center><div id="rectangle4" class="rectangle" ng-click="paintShape('rectangle')"> </div></center>
+          </div>
+          <div class="col-xs-4">
+            <center><div id="diamond4" class="diamond" ng-click="paintShape('diamond')"> </div></center>
+          </div>
+          <div class="col-xs-4">
+            <center><div id="circle4" class="circle" ng-click="paintShape('circle')"> </div></center>
+          </div>
+          <div class="col-xs-4">
+            <center><div id="triangle-eq4" class="triangle-eq" ng-click="paintShape('triangle-eq')"> </div></center>
+          </div>
+          <div class="col-xs-4">
+            <center><div id="square4" class="square" ng-click="paintShape('square')"> </div></center>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button ng-click="next()">NEXT</button>
+</div>
+
+<div  class="container" ng-show="sectionNumber == '5'">
+  <div class="math-q5-container">
+    <div class="row" >
+      <div class="col-xs-6">
+        <center><div id="square5" class="square"> </div></center>
+      </div>
+      <div class="col-xs-6">
+        <center><h1 class="math-q5-num">0</h1></center>
+      </div>
+    </div>
+    <div class="row" >
+      <div class="col-xs-6">
+        <center><div id="triangle-rt5" class="triangle-rt"> </div></center>
+      </div>
+      <div class="col-xs-6">
+        <center><h1 class="math-q5-num">4</h1></center>
+      </div>
+    </div>
+    <div class="row" >
+      <div class="col-xs-6">
+        <center><div id="circle4" class="circle"> </div></center>
+      </div>
+      <div class="col-xs-6">
+        <center><h1 class="math-q5-num">6</h1></center>
+      </div>
+    </div>
+    <div class="row" >
+      <div class="col-xs-6">
+        <center class="hex-div"><div id="hexagon5" class="hexagon"> </div></center>
+      </div>
+      <div class="col-xs-6">
+        <center><h1 class="math-q5-num">3</h1> </center>
+      </div>
     </div>
   </div>
 </div>
+
+  

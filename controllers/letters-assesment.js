@@ -1,188 +1,33 @@
 angular.module('HappyTree')
   .controller('LettersAssesmentCtrl', ['$scope','$rootScope','$http', '$auth', 'StudentService', 'UserService','AssesmentService', '$filter', function($scope, $rootScope, $http, $auth, StudentService, UserService, AssesmentService, $filter) {
-
-    var letters = [ {
-                     upper: "A", 
-                     lower: "a",
-                     find_audio:"audio/a.m4a",
-                     sound_audio:"audio/a_sound.m4a"
-                     },
-
-                     {
-                     upper: "B", 
-                     lower: "b", 
-                     find_audio:"audio/b.m4a",
-                     sound_audio:"audio/b_sound.m4a"
-                     },
-
-                     {
-                     upper: "C", 
-                     lower: "c",
-                     find_audio:"audio/c.m4a",
-                     sound_audio:"audio/c_sound.m4a"
-                     },
-
-                     {
-                     upper: "D", 
-                     lower: "d",
-                     find_audio:"audio/d.m4a",
-                     sound_audio:"audio/d_sound.m4a"
-                     },
-
-                    {
-                     upper: "E", 
-                     lower: "e", 
-                     find_audio:"audio/e.m4a",
-                     sound_audio:"audio/e_sound.m4a"
-                     },
-
-                     {
-                     upper: "F", 
-                     lower: "f",
-                     find_audio:"audio/f.m4a",
-                     sound_audio:"audio/f_sound.m4a"
-                     },
-
-                     {
-                     upper: "G", 
-                     lower: "g", 
-                     find_audio:"audio/g.m4a",
-                     sound_audio:"audio/g_sound.m4a"
-                     },
-
-                     {
-                     upper: "H", 
-                     lower: "h", 
-                     find_audio:"audio/h.m4a",
-                     sound_audio:"audio/h_sound.m4a"
-                     },
-
-                     {
-                     upper: "I", 
-                     lower: "i", 
-                     find_audio:"audio/i.m4a",
-                     sound_audio:"audio/i_sound.m4a"
-                     },
-
-                     {
-                     upper: "J", 
-                     lower: "j", 
-                     find_audio:"audio/j.m4a",
-                     sound_audio:"audio/j_sound.m4a"
-                     },
-
-                     {
-                     upper: "K", 
-                     lower: "k", 
-                     find_audio:"audio/k.m4a",
-                     sound_audio:"audio/k_sound.m4a"
-                     },
-
-                     {
-                     upper: "L", 
-                     lower: "l", 
-                     find_audio:"audio/l.m4a",
-                     sound_audio:"audio/l_sound.m4a"
-                     },
-
-                     {
-                     upper: "M", 
-                     lower: "m", 
-                     find_audio:"audio/m.m4a",
-                     sound_audio:"audio/m_sound.m4a"
-                     },
-
-                     {
-                     upper: "N", 
-                     lower: "n", 
-                     find_audio:"audio/n.m4a",
-                     sound_audio:"audio/n_sound.m4a"
-                     },
-
-                     {
-                     upper: "O", 
-                     lower: "o", 
-                     find_audio:"audio/o.m4a",
-                     sound_audio:"audio/o_sound.m4a"
-                     },
-
-                     {
-                     upper: "P", 
-                     lower: "p", 
-                     find_audio:"audio/p.m4a",
-                     sound_audio:"audio/p_sound.m4a"
-                     },
-
-                     {
-                     upper: "Q", 
-                     lower: "q", 
-                     find_audio:"audio/q.m4a",
-                     sound_audio:"audio/q_sound.m4a"
-                     },
-
-                     {
-                     upper: "R", 
-                     lower: "r", 
-                     find_audio:"audio/r.m4a",
-                     sound_audio:"audio/r_sound.m4a"
-                     },
-
-                     {
-                     upper: "S", 
-                     lower: "s", 
-                     find_audio:"audio/s.m4a",
-                     sound_audio:"audio/s_sound.m4a"
-                     },
-
-                     {
-                     upper: "T", 
-                     lower: "t", 
-                     find_audio:"audio/t.m4a",
-                     sound_audio:"audio/t_sound.m4a"
-                     },
-
-                     {
-                     upper: "U", 
-                     lower: "u", 
-                     find_audio:"audio/u.m4a",
-                     sound_audio:"audio/u_sound.m4a"
-                     },
-
-                     {
-                     upper: "V", 
-                     lower: "v", 
-                     find_audio:"audio/v.m4a",
-                     sound_audio:"audio/v_sound.m4a"
-                     },
-
-                     {
-                     upper: "W", 
-                     lower: "w", 
-                     find_audio:"audio/w.m4a",
-                     sound_audio:"audio/w_sound.m4a"
-                     },
-
-                     {
-                     upper: "X", 
-                     lower: "x", 
-                     find_audio:"audio/x.m4a",
-                     sound_audio:"audio/x_sound.m4a"
-                     },
-
-                     {
-                     upper: "Y", 
-                     lower: "y",
-                     find_audio:"audio/y.m4a",
-                     sound_audio:"audio/y_sound.m4a"
-                     },
-
-                     {
-                     upper: "Z", 
-                     lower: "z", 
-                     find_audio:"audio/z.m4a",
-                     sound_audio:"audio/z_sound.m4a"
-                     }
-                ];
+    var letters = [ 
+                    { upper: "A", lower: "a", find_audio:"audio/a.m4a", sound_audio:"audio/a_sound.m4a", selected: true},
+                    { upper: "B", lower: "b", find_audio:"audio/b.m4a", sound_audio:"audio/b_sound.m4a", selected: true},
+                    { upper: "C", lower: "c", find_audio:"audio/c.m4a", sound_audio:"audio/c_sound.m4a", selected: true},
+                    { upper: "D", lower: "d", find_audio:"audio/d.m4a", sound_audio:"audio/d_sound.m4a", selected: true},
+                    { upper: "E", lower: "e", find_audio:"audio/e.m4a", sound_audio:"audio/e_sound.m4a", selected: true},
+                    { upper: "F", lower: "f", find_audio:"audio/f.m4a", sound_audio:"audio/f_sound.m4a", selected: true},
+                    { upper: "G", lower: "g", find_audio:"audio/g.m4a", sound_audio:"audio/g_sound.m4a", selected: true},
+                    { upper: "H", lower: "h", find_audio:"audio/h.m4a", sound_audio:"audio/h_sound.m4a", selected: true},
+                    { upper: "I", lower: "i", find_audio:"audio/i.m4a", sound_audio:"audio/i_sound.m4a", selected: true},
+                    { upper: "J", lower: "j", find_audio:"audio/j.m4a", sound_audio:"audio/j_sound.m4a", selected: true},
+                    { upper: "K", lower: "k", find_audio:"audio/k.m4a", sound_audio:"audio/k_sound.m4a", selected: true},
+                    { upper: "L", lower: "l", find_audio:"audio/l.m4a", sound_audio:"audio/l_sound.m4a", selected: true},
+                    { upper: "M", lower: "m", find_audio:"audio/m.m4a", sound_audio:"audio/m_sound.m4a", selected: true},
+                    { upper: "N", lower: "n", find_audio:"audio/n.m4a", sound_audio:"audio/n_sound.m4a", selected: true},
+                    { upper: "O", lower: "o", find_audio:"audio/o.m4a", sound_audio:"audio/o_sound.m4a", selected: true},
+                    { upper: "P", lower: "p", find_audio:"audio/p.m4a", sound_audio:"audio/p_sound.m4a", selected: true},
+                    { upper: "Q", lower: "q", find_audio:"audio/q.m4a", sound_audio:"audio/q_sound.m4a", selected: true},
+                    { upper: "R", lower: "r", find_audio:"audio/r.m4a", sound_audio:"audio/r_sound.m4a", selected: true},
+                    { upper: "S", lower: "s", find_audio:"audio/s.m4a", sound_audio:"audio/s_sound.m4a", selected: true},
+                    { upper: "T", lower: "t", find_audio:"audio/t.m4a", sound_audio:"audio/t_sound.m4a", selected: true},
+                    { upper: "U", lower: "u", find_audio:"audio/u.m4a", sound_audio:"audio/u_sound.m4a", selected: true},
+                    { upper: "V", lower: "v", find_audio:"audio/v.m4a", sound_audio:"audio/v_sound.m4a", selected: true},
+                    { upper: "W", lower: "w", find_audio:"audio/w.m4a", sound_audio:"audio/w_sound.m4a", selected: true},
+                    { upper: "X", lower: "x", find_audio:"audio/x.m4a", sound_audio:"audio/x_sound.m4a", selected: true},
+                    { upper: "Y", lower: "y", find_audio:"audio/y.m4a", sound_audio:"audio/y_sound.m4a", selected: true},
+                    { upper: "Z", lower: "z", find_audio:"audio/z.m4a", sound_audio:"audio/z_sound.m4a", selected: true}
+                  ];
 
       var shuffle = function(o){
         for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
@@ -197,17 +42,20 @@ angular.module('HappyTree')
         return $auth.isAuthenticated();
       };
 
-      $scope.letterList = shuffle(angular.copy(letters));
+      $scope.setSelectedLetters = function () {
+        $scope.selectedLetters = []
+        for (var i = 0; i < $scope.letterList.length; i++) {
+          if ($scope.letterList[i].selected )
+            $scope.selectedLetters.push($scope.letterList[i])
+        }
+      }
+
+      $scope.letterSelect = angular.copy(letters)
+
       var letterList = $scope.letterList
-      $scope.correctLetter = letterList[0]
-      $scope.correctLetterIndexCounter = 0
-      $scope.letterBoard = shuffle([$scope.correctLetter, letterList[1],letterList[2],letterList[3],letterList[4],letterList[5],letterList[6],letterList[7],letterList[8]]);
-      $scope.incorrectAnswers = []
-      $scope.correctAnswers = []
-      $scope.upper = false
-      $scope.lower = false
+
       $scope.startButton = true
-      $scope.sound = false
+
       $scope.finish = false
 
       $scope.allStudents = StudentService.getAllStudents()
@@ -218,10 +66,79 @@ angular.module('HappyTree')
 
       if ($scope.isAuthenticated() == true) {
         $scope.currentUser = UserService.getCurrentUser()
+      }
+
+      $scope.showLetterSelect = function() {
+         var panel = '.letter-select-container'
+        var showing = $(panel).css('display')
+        if(showing == 'none') {
+          $(panel).slideDown();
+        } else {
+          $(panel).slideUp();
+        }
       } 
 
+      $scope.toggleSelectLetter = function(letter){
+        if (letter.selected == true) {
+          letter.selected = false
+          console.log(letter.selected)
+        } else {
+          letter.selected = true
+          console.log(letter.selected)
+        }
+      }
+
+      $scope.unselectAll = function() {
+        for (var i = 0; i < $scope.letterSelect.length; i ++) {
+          $scope.letterSelect[i].selected = false
+        }
+      }
+
+       $scope.selectAll = function() {
+        for (var i = 0; i < $scope.letterSelect.length; i ++) {
+          $scope.letterSelect[i].selected = true
+        }
+      }
+
+      $scope.selectRecentMissed = function(type) {
+        if ($scope.selectedStudent.firstName) {
+          var studentAssesments = AssesmentService.getStudentAssesments($scope.selectedStudent)
+          $scope.currentLettersSelected = null
+
+            for (var j = studentAssesments.letter.length - 1; j >= 0; j--) {
+              console.log( studentAssesments.letter[j].name )
+              if (studentAssesments.letter[j].name == type) {
+                $scope.currentLettersSelected = studentAssesments.letter[j].missed
+              }
+              if ($scope.currentLettersSelected) {
+                break
+              }
+            }
+
+
+          if ($scope.currentLettersSelected) {
+            if ($scope.currentLettersSelected.length < 1) {
+              alert($scope.selectedStudent.firstName + " " + $scope.selectedStudent.lastName + " did not miss any letters on their last " + type + " Assesment.")
+            } else {
+              $scope.unselectAll()
+              for (var i = 0; i < $scope.letterSelect.length; i ++) {
+                for (var x = 0; x < $scope.currentLettersSelected.length; x++) {
+                  if ($scope.letterSelect[i].upper == $scope.currentLettersSelected[x]) {
+                    $scope.letterSelect[i].selected = true
+                  }
+                }
+              }
+            }
+          } else {
+            alert($scope.selectedStudent.firstName + " " + $scope.selectedStudent.lastName + " has not taken a " + type + " Assesment.")
+          }
+
+        } else {
+          alert("Please select a student.")
+        }
+      }
+
       $scope.setCurrentStudents = function() {
-        console.log($scope.currentClass)
         $scope.currentStudents = []
         if ($scope.currentClass == "All Students") {
           $scope.currentStudents = $scope.allStudents
@@ -290,11 +207,11 @@ angular.module('HappyTree')
       }
 
       $scope.changeCorrectLetter = function () {
-        if ($scope.correctLetterIndexCounter == 25) {
+        if ($scope.correctLetterIndexCounter == ($scope.selectedLetters.length - 1)) {
           $scope.finishAssesment()
         } else {
           $scope.correctLetterIndexCounter++
-          $scope.correctLetter = letterList[$scope.correctLetterIndexCounter]
+          $scope.correctLetter = $scope.selectedLetters[$scope.correctLetterIndexCounter]
           $scope.playCorrectAudio()
         }
       }
@@ -330,7 +247,6 @@ angular.module('HappyTree')
 
       $scope.resetAssesment = function () {
         $scope.correctLetterIndexCounter = 0
-        $scope.letterList = shuffle(angular.copy(letters));
         $scope.incorrectAnswers = []
         $scope.correctAnswers = []  
         $scope.startButton = true
@@ -343,6 +259,10 @@ angular.module('HappyTree')
         if ($scope.selectedStudent.firstName || !$scope.isAuthenticated()) {
           StudentService.setCurrentStudent($scope.selectedStudent)
           $scope.resetAssesment()
+          $scope.letterList = shuffle(angular.copy($scope.letterSelect));
+          $scope.setSelectedLetters()
+          $scope.correctLetter = $scope.selectedLetters[0]
+          $scope.makeNewBoard()
           $scope.startButton = false
           if (type == 1) {
             $scope.upper = true
@@ -357,10 +277,6 @@ angular.module('HappyTree')
           alert("Don't forget to choose a student!")
         }
 
-      }
-
-      $scope.isAuthenticated = function() {
-        return $auth.isAuthenticated();
       }
 
       $scope.finishAssesment = function () {
@@ -395,9 +311,10 @@ angular.module('HappyTree')
           name: assesmentName,
           type: "Letter",
           date: new Date(),
-          percentCorrect: $scope.toPercentage($scope.correctAnswers.length/26, 0),
+          percentCorrect: $scope.toPercentage($scope.correctAnswers.length/$scope.selectedLetters.length, 0),
           correctCount: $scope.correctAnswers.length.toString(),
           incorrectCount: $scope.incorrectAnswers.length.toString(),
+          correct: $scope.correctAnswers,
           missed: $scope.incorrectAnswers
         }
 
