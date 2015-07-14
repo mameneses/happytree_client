@@ -452,12 +452,15 @@ angular.module('HappyTree')
       var missedLetterView = 'missed' + score.name
       
       if (score.name == 'Uppercase') {
+        $scope.correctUppercaseList = score.correct.sort().join(" ")
         $scope.missedUppercaseList = score.missed.sort().join(" ")
       }
       if (score.name == 'Lowercase') {
+        $scope.correctLowercaseList = score.correct.sort().join(" ")
         $scope.missedLowercaseList  = score.missed.sort().join(" ")
       }
       if (score.name == 'Sound') {
+        $scope.correctSoundList = score.correct.sort().join(" ")
         $scope.missedSoundList  = score.missed.sort().join(" ")
       }
 
@@ -480,14 +483,16 @@ angular.module('HappyTree')
       var scoreName = 'missed' + score.name
 
       for (var i = 0; i < $scope.missedWordsLists.length; i++) {
-
         if (score.name == $scope.missedWordsLists[i].name) {
           var name = $scope.sightWordSeries[i] 
           $scope.missedWordsLists[i].missedWords = score.missedWords
         }
       };
 
+
+
       $scope[scoreName] = true
+      $(".missed-letters").slideDown();
 
     }
 

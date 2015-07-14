@@ -283,8 +283,22 @@
                   <td ng-repeat="score in assesments" ng-class="getScoreColorClass(score.percentCorrect)" ng-click="toggleMissedLetters(score)" class="center-text pointer"> {{score.percentCorrect + "%"}}</td>
                 </tr>
               </table>
-              <div ng-show="{{'missed' + assesments[0].name}}" ng-if="assesments.length > 0"  class="missed-letters row">
-                <h6 class="col-xs-2">Missed Letters:</h6>
+              <div ng-show="{{'missed' + assesments[0].name}}" ng-if="assesments.length > 0"  class="missed-letters">
+                <div class="row">
+                  <h6 class="col-xs-2">Correct Letters:</h6>
+                  <h5  class="col-xs-9" ng-if="assesments[0].name == 'Uppercase'"> 
+                    {{correctUppercaseList}}
+                  </h5>
+                  <h5 class="col-xs-9" ng-if="assesments[0].name == 'Lowercase'"> 
+                    {{correctLowercaseList}} 
+                  </h5>
+                  <h5 class="col-xs-9" ng-if="assesments[0].name == 'Sound'"> 
+                    {{correctSoundList}}
+                  </h5>
+                  <h5 class="ion-close grey pointer col-xs-1" ng-click="hideMissedLetters(assesments[0].name)"></h5>
+                </div>
+                <div class="row">
+                  <h6 class="col-xs-2">Missed Letters:</h6>
                   <h5  class="col-xs-9" ng-if="assesments[0].name == 'Uppercase'"> 
                     {{missedUppercaseList}}
                   </h5>
@@ -292,9 +306,9 @@
                     {{missedLowercaseList}} 
                   </h5>
                   <h5 class="col-xs-9" ng-if="assesments[0].name == 'Sound'"> 
-                  {{missedSoundList}}
+                    {{missedSoundList}}
                   </h5>
-                <h5 class="ion-close red pointer col-xs-1" ng-click="hideMissedLetters(assesments[0].name)"></h5>
+                </div>
               </div>
             </div>
           </div>

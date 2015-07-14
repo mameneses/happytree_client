@@ -65,9 +65,9 @@
 </div>
 
 
-<div class="container" ng-if="startShowing == false && sectionNumber != '5'">
+<div class="container" ng-if="startShowing == false">
   <div class="math-q-container">
-    <div class="color-container">
+    <div class="color-container" ng-hide="sectionNumber == '5'">
         <div class="red-bg color-tile" ng-click="colorSelect('red')"></div> 
         <div class="green-bg color-tile" ng-click="colorSelect('green')"></div>
         <div class="blue-bg color-tile" ng-click="colorSelect('blue')"></div>
@@ -144,7 +144,9 @@
             <center><div id="square4" class="square" ng-click="paintShape('square')"> </div></center>
           </div>
         </div>
-        <div ng-show="sectionNumber == '6'">
+      </div>
+
+      <div ng-show="sectionNumber == '6'">
         <div class="row" >
           <div class="col-xs-4">
             <center><div id="triangle-rt4" class="triangle-rt" ng-click="paintShape('triangle-rt')"> </div></center>
@@ -166,46 +168,45 @@
           </div>
         </div>
       </div>
+
+      <div ng-show="sectionNumber == '5'">
+        <div class="row" >
+          <div class="col-xs-6">
+            <center><div id="square5" class="square"> </div></center>
+          </div>
+          <div class="col-xs-6">
+            <center><h1 class="math-q5-num">0</h1></center>
+          </div>
+        </div>
+        <div class="row" >
+          <div class="col-xs-6">
+            <center><div id="triangle-rt5" class="triangle-rt"> </div></center>
+          </div>
+          <div class="col-xs-6">
+            <center><h1 class="math-q5-num">4</h1></center>
+          </div>
+        </div>
+        <div class="row" >
+          <div class="col-xs-6">
+            <center><div id="circle4" class="circle"> </div></center>
+          </div>
+          <div class="col-xs-6">
+            <center><h1 class="math-q5-num">6</h1></center>
+          </div>
+        </div>
+        <div class="row" >
+          <div class="col-xs-6">
+            <center class="hex-div"><div id="hexagon5" class="hexagon"> </div></center>
+          </div>
+          <div class="col-xs-6">
+            <center><h1 class="math-q5-num">3</h1> </center>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <button ng-click="next()">NEXT</button>
 </div>
 
-<div  class="container" ng-show="sectionNumber == '5'">
-  <div class="math-q5-container">
-    <div class="row" >
-      <div class="col-xs-6">
-        <center><div id="square5" class="square"> </div></center>
-      </div>
-      <div class="col-xs-6">
-        <center><h1 class="math-q5-num">0</h1></center>
-      </div>
-    </div>
-    <div class="row" >
-      <div class="col-xs-6">
-        <center><div id="triangle-rt5" class="triangle-rt"> </div></center>
-      </div>
-      <div class="col-xs-6">
-        <center><h1 class="math-q5-num">4</h1></center>
-      </div>
-    </div>
-    <div class="row" >
-      <div class="col-xs-6">
-        <center><div id="circle4" class="circle"> </div></center>
-      </div>
-      <div class="col-xs-6">
-        <center><h1 class="math-q5-num">6</h1></center>
-      </div>
-    </div>
-    <div class="row" >
-      <div class="col-xs-6">
-        <center class="hex-div"><div id="hexagon5" class="hexagon"> </div></center>
-      </div>
-      <div class="col-xs-6">
-        <center><h1 class="math-q5-num">3</h1> </center>
-      </div>
-    </div>
-  </div>
-</div>
 
   

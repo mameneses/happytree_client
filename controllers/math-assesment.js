@@ -63,6 +63,7 @@ angular.module('HappyTree')
       var num = parseInt($scope.sectionNumber)
       var nextSection = num + 1
       $scope.sectionNumber = nextSection.toString()
+      console.log(nextSection)
     }
 
     $scope.colorSelect = function (color) {

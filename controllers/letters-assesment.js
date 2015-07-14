@@ -63,6 +63,7 @@ angular.module('HappyTree')
       $scope.selectedStudent = {}
 
       $scope.promptShowing = false
+      $scope.letterSelectShowing = false
 
       if ($scope.isAuthenticated() == true) {
         $scope.currentUser = UserService.getCurrentUser()
@@ -72,8 +73,10 @@ angular.module('HappyTree')
          var panel = '.letter-select-container'
         var showing = $(panel).css('display')
         if(showing == 'none') {
+          $scope.letterSelectShowing = true
           $(panel).slideDown();
         } else {
+          $scope.letterSelectShowing = false
           $(panel).slideUp();
         }
       } 
@@ -81,10 +84,8 @@ angular.module('HappyTree')
       $scope.toggleSelectLetter = function(letter){
         if (letter.selected == true) {
           letter.selected = false
-          console.log(letter.selected)
         } else {
           letter.selected = true
-          console.log(letter.selected)
         }
       }
 
@@ -103,10 +104,10 @@ angular.module('HappyTree')
       $scope.selectRecentMissed = function(type) {
         if ($scope.selectedStudent.firstName) {
           var studentAssesments = AssesmentService.getStudentAssesments($scope.selectedStudent)
+          console.log(studentAssesments)
           $scope.currentLettersSelected = null
 
             for (var j = studentAssesments.letter.length - 1; j >= 0; j--) {
-              console.log( studentAssesments.letter[j].name )
               if (studentAssesments.letter[j].name == type) {
                 $scope.currentLettersSelected = studentAssesments.letter[j].missed
               }
@@ -114,7 +115,6 @@ angular.module('HappyTree')
                 break
               }
             }
-
 
           if ($scope.currentLettersSelected) {
             if ($scope.currentLettersSelected.length < 1) {

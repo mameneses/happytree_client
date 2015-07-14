@@ -1,6 +1,6 @@
 <div ng-show="finish" ng-click="hideFinish()" class="finish-screen">
   <center class="done-gif">
-  <iframe src="//giphy.com/embed/IjmMzurYulKEw?html5=true" width="480" height="318" frameBorder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+  <iframe src="//giphy.com/embed/IjmMzurYulKEw?html5=true" width="480" height="318" frameBorder="0" ></iframe>
   </center>
   <center class="done-text" >Good Job!</center>
 </div>
@@ -66,7 +66,7 @@
       </div>
     </div>
     <div>
-      <center><div class="btn btn-default" ng-click="showLetterSelect()">Choose Letters</div></center>
+      <center><div class="btn btn-default" ng-click="showLetterSelect()">Choose Letters  <span class="ion-chevron-up" ng-if="letterSelectShowing"></span> <span class="ion-chevron-down" ng-if="!letterSelectShowing"></span></div></center>
     </div>
     <br>
     <div class="letter-select-container">
@@ -84,7 +84,7 @@
             Unselect All
           </div>
         </div>
-        <div class="col-sm-4">
+        <div class="col-sm-4" ng-show="isAuthenticated()">
           <h6 class="center-text">Select Recently Missed:</h6>
           <div class="row">
             <div class="col-sm-4">
